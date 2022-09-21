@@ -37,19 +37,6 @@ namespace petshop.UI
             }
             
         }
-        /*protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
-        {
-
-                Session["addproduct"] = "true";
-
-                if (e.CommandName == "addtocart")
-                {
-                    DropDownList list = (DropDownList)(e.Item.FindControl("DropDownList1"));
-                    int quantity = int.Parse(list.SelectedValue);
-                    Response.Redirect("ViewCart.aspx?procode=" + e.CommandArgument.ToString() + "&quantity=" + list.SelectedItem.ToString());
-
-                }
-        }*/
 
         protected void Gridview1_Command(object sender, GridViewCommandEventArgs e)
         {

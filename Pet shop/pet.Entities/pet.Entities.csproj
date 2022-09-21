@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Bill.cs" />
     <Compile Include="CartItem.cs" />
-    <Compile Include="customer.cs" />
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Userdetails.cs" />

@@ -38,7 +38,7 @@
                         <label>Product ID</label>
                         <div class="form-group">
                             <div class ="input-group">
-                           <asp:TextBox CssClass="form-control" ID="txtid" runat="server" placeholder="Product ID"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="productid" runat="server" placeholder="Product ID"></asp:TextBox>
                             <asp:Button CssClass="btn btn-primary" ID="Btngo" runat="server" Text="Go" OnClick="Buttongo" />
                         </div>
                      </div>
@@ -77,6 +77,10 @@
                    <div class="row">
                      <div class="col-4">
                         <asp:Button ID="buttonadd" class="btn btn-lg btn-block btn-primary" runat="server" Text="Add" OnClick="btnadd" />
+                         &nbsp;&nbsp;
+                         <asp:Button ID="btnupdate" class="btn btn-lg btn-block btn-primary" runat="server" Text="update" />
+&nbsp;
+                         <asp:Button ID="btndelete" class="btn btn-lg btn-block btn-primary" runat="server" Text="Delete" />
                          <br />
                          <asp:Label ID="lbmsg" runat="server"></asp:Label>
                      </div>
@@ -115,7 +119,7 @@
                                              <td>
                                                  <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="procode" DataSourceID="ObjectDataSource2">
                                                      <Columns>
-                                                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                                         <asp:CommandField ShowSelectButton="True" />
                                                          <asp:BoundField DataField="procode" HeaderText="procode" SortExpression="procode" />
                                                          <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
                                                          <asp:BoundField DataField="protype" HeaderText="protype" SortExpression="protype" />

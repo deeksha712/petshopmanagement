@@ -115,7 +115,6 @@
     <Content Include="petsimages\Pomeranian.jpg" />
     <Content Include="ViewCart.aspx" />
     <Content Include="ViewProducts.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="petsimages\american eskimo.jpg" />
     <Content Include="petsimages\balinese cat.jpg" />
     <Content Include="petsimages\british short hair cat.jpg" />
@@ -132,7 +131,6 @@
     <Content Include="petsimages\Persian cat.jpg" />
     <Content Include="petsimages\pug.jpg" />
     <Content Include="petsimages\Ragdoll cat.jpg" />
-    <Content Include="productdetails.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="AdminPage.aspx" />
@@ -245,26 +243,12 @@
     <Compile Include="Site3for viewproducts.Master.designer.cs">
       <DependentUpon>Site3for viewproducts.Master</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site3afterlogin.Master.cs">
       <DependentUpon>Site3afterlogin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site3afterlogin.Master.designer.cs">
       <DependentUpon>Site3afterlogin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="productdetails.aspx.cs">
-      <DependentUpon>productdetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="productdetails.aspx.designer.cs">
-      <DependentUpon>productdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>

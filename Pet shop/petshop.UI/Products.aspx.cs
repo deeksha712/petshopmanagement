@@ -26,6 +26,7 @@ namespace petshop.UI
         protected void Buttongo(object sender, EventArgs e)
         {
 
+
         }
 
         protected void btnadd(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace petshop.UI
             try
             {
                 product Product = new product();
-                Product.procode = txtid.Text;
+                Product.procode = productid.Text;
                 Product.productname = txtname.Text;
                 Product.protype = txttype.Text;
                 Product.stock = int.Parse(txtstock.Text);
@@ -63,11 +64,6 @@ namespace petshop.UI
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnaddpic(object sender, EventArgs e)
         {
 
         }
