@@ -1,9 +1,43 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="petshop.UI.Add_Product" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
   
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
+         });
+         function readURL(input) {
+             if (input.files && input.files[0]) {
+                 var reader = new FileReader();
+                 reader.onload = function (e) {
+                     $('#imgview').attr('src', e.target.result);
+                 };
+                 reader.readAsDataURL(input.files[0]);
+             }
+         }
+     </script>
+  
     <style type="text/css">
         .auto-style1 {
-            width: 1516px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border-radius: .25rem;
+            left: 0px;
+            top: 0px;
+        }
+        .auto-style2 {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-.5 * var(--bs-gutter-x));
+            margin-left: calc(-.5 * var(--bs-gutter-x));
+            text-align: center;
         }
     </style>
   
@@ -24,12 +58,13 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="100px" src="different-pets-concept_52683-37940.jpg" />
+                             <img id="imgview" Width="120" src="different-pets-concept_52683-37940.jpg" />
+                           
                         </center>
                      </div>
                   </div>
                    <div class="row">
-                       <asp:FileUpload ID="FileUpload1" runat="server" />
+                       <asp:FileUpload ID="FileUpload1" onchange="readURL(this)" CssClass="form-control" runat="server" />
 
                    </div>
                   
@@ -75,12 +110,13 @@
                      
                   </div>
                    <div class="row">
-                     <div class="col-4">
-                        <asp:Button ID="buttonadd" class="btn btn-lg btn-block btn-primary" runat="server" Text="Add" OnClick="btnadd" />
+                     <div class="col-6">
+                        <asp:Button ID="buttonadd" class="btn  btn-primary" runat="server" Text="Add" OnClick="btnadd" />
+                        
                          &nbsp;&nbsp;
-                         <asp:Button ID="btnupdate" class="btn btn-lg btn-block btn-primary" runat="server" Text="update" />
-&nbsp;
-                         <asp:Button ID="btndelete" class="btn btn-lg btn-block btn-primary" runat="server" Text="Delete" />
+                         &nbsp;
+                         <asp:Button ID="buttonupdate" class="btn  btn-primary" runat="server" Text="Update" OnClick="btnupdate" />
+                        
                          <br />
                          <asp:Label ID="lbmsg" runat="server"></asp:Label>
                      </div>
@@ -93,46 +129,35 @@
             <br>
          </div>
          <div class="col-md-7">
-            <div class="card">
+            <div class="auto-style1">
                <div class="card-body">
+                  <div class="auto-style2">
+                      &nbsp;PRODUCTS</div>
                   <div class="row">
                      <div class="col">
-                        <center>
-                           <h4>Products List</h4>
-                        </center>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                         <br />
-                         <table align="center" class="w-100">
-                             <tr>
-                                 <td class="auto-style1">
+                         
+                                             
+                                                 
+                                    
                                      <br />
+                             
                                      <table align="center" class="w-100">
                                          <tr>
                                              <td>
-                                                 <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="procode" DataSourceID="ObjectDataSource2">
+                                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="procode" DataSourceID="ObjectDataSource2">
                                                      <Columns>
-                                                         <asp:CommandField ShowSelectButton="True" />
-                                                         <asp:BoundField DataField="procode" HeaderText="procode" SortExpression="procode" />
-                                                         <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
-                                                         <asp:BoundField DataField="protype" HeaderText="protype" SortExpression="protype" />
-                                                         <asp:BoundField DataField="stock" HeaderText="stock" SortExpression="stock" />
-                                                         <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                                                         <asp:CommandField ShowDeleteButton="True" />
+                                                         <asp:BoundField DataField="procode" HeaderText="Productcode" SortExpression="procode" />
+                                                         <asp:BoundField DataField="productname" HeaderText="Productname" SortExpression="productname" />
+                                                         <asp:BoundField DataField="protype" HeaderText="Protype" SortExpression="protype" />
+                                                         <asp:BoundField DataField="stock" HeaderText="Stock" SortExpression="stock" />
+                                                         <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price" />
                                                          <asp:ImageField DataImageUrlField="link" HeaderText="Product">
-                                                             <ControlStyle Height="300px" Width="300px" />
-                                                             <ItemStyle Height="50px" Width="50px" />
+                                                             <ControlStyle Height="200px" Width="200px" />
                                                          </asp:ImageField>
                                                      </Columns>
                                                      <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                                                      <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                                                     <PagerSettings LastPageText="PreviousPage" Mode="NextPreviousFirstLast" NextPageText="NextPage" />
                                                      <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
                                                      <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                                                      <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
@@ -144,31 +169,13 @@
                                              </td>
                                          </tr>
                                      </table>
+                                     <br/>
+                                    <br/> 
                                      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="Deleteproduct" SelectMethod="GetAllProducts" TypeName="petshop.Businesslayer.productservices" UpdateMethod="Updateproduct">
                                          <DeleteParameters>
-                                             <asp:Parameter Name="procode" Type="Int32" />
-                                         </DeleteParameters>
-                                         <UpdateParameters>
-                                             <asp:Parameter Name="productname" Type="String" />
-                                             <asp:Parameter Name="protype" Type="String" />
-                                             <asp:Parameter Name="stock" Type="Int32" />
-                                             <asp:Parameter Name="price" Type="Int32" />
-                                             <asp:Parameter Name="link" Type="String" />
                                              <asp:Parameter Name="procode" Type="String" />
-                                         </UpdateParameters>
+                                         </DeleteParameters>
                                      </asp:ObjectDataSource>
-                                     <br />
-                                 </td>
-                             </tr>
-                         </table>
-                         <br />
-                         <br />
-                         <table align="center" class="w-100">
-                             <tr>
-                                 <td>&nbsp;</td>
-                             </tr>
-                         </table>
-                         <br />
                          <br />
                      </div>
                   </div>

@@ -49,13 +49,13 @@ namespace petshop.UI
                         Session["role"] = "user";
                         //fillsavedcart();
 
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("HomePage.aspx");
                     }
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect("HomePage.aspx");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid User credentials');</script>");
+                    lbmsg.Text="Invalid Credentials";
                 }
             }
             catch (Exception)

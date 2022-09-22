@@ -111,7 +111,8 @@
     <Content Include="Homepage.aspx" />
     <Content Include="PaceOrder.aspx" />
     <Content Include="petsimages\addcart.jpg" />
-    <Content Include="petsimages\Pomeranian.jfif" />
+    <Content Include="petsimages\pet-shop-logo.jpg" />
+    <Content Include="petsimages\Petstore.jpg" />
     <Content Include="petsimages\Pomeranian.jpg" />
     <Content Include="ViewCart.aspx" />
     <Content Include="ViewProducts.aspx" />
@@ -137,7 +138,6 @@
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js1\js1\popper.min.js" />
     <Content Include="bootstrap\js\js2\bootstrap.min.js" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -161,8 +161,6 @@
     <Content Include="petsimages\Bulldogimage.jpg" />
     <Content Include="customer.aspx" />
     <Content Include="User.aspx" />
-    <Content Include="webform.aspx" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Loginform.aspx" />
     <Content Include="Registerform.aspx" />
@@ -280,13 +278,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,24 +352,9 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="webform.aspx.cs">
-      <DependentUpon>webform.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webform.aspx.designer.cs">
-      <DependentUpon>webform.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

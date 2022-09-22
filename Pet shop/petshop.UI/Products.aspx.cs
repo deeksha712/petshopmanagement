@@ -6,45 +6,77 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using pet.Entities;
+using System.Data;
 using petshop.Businesslayer;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 using System.Data.SqlClient;
-
 
 namespace petshop.UI
 {
     public partial class Add_Product : System.Web.UI.Page
     {
-
-        
+        static string global_filepath;
+        productservices productservice = new productservices();
+        DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView2.DataBind();
+            GridView1.DataBind();
         }
 
 
         protected void Buttongo(object sender, EventArgs e)
         {
+            try
+            {
+                product Product = new product();
 
+                Product.procode = productid.Text;
+                DataTable dt = new DataTable();
+                productservices productservice = new productservices();
+                dt = productservice.GetProductById(Product);
+                if (dt.Rows.Count > 0)
+                {
+
+                    txtname.Text = dt.Rows[0]["productname"].ToString();
+                    txttype.Text = dt.Rows[0]["protype"].ToString();
+                    txtstock.Text = dt.Rows[0]["stock"].ToString();
+                    txtprice.Text = dt.Rows[0]["price"].ToString();
+                    global_filepath = dt.Rows[0]["link"].ToString();
+
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
         protected void btnadd(object sender, EventArgs e)
         {
-            FileUpload1.SaveAs(Server.MapPath("~/petsimages/") + Path.GetFileName("FileUpload1.Filename"));
-            String link = "petsimages/" + Path.GetFileName(FileUpload1.FileName);
             try
             {
-                product Product = new product();
-                Product.procode = productid.Text;
-                Product.productname = txtname.Text;
-                Product.protype = txttype.Text;
-                Product.stock = int.Parse(txtstock.Text);
-                Product.price = int.Parse(txtprice.Text);
-                Product.link = link;
-                
-                productservices productservices = new productservices();
-                productservices.Addproduct(Product);
+                string filepath = "~/petsimages/";
+                string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                FileUpload1.SaveAs(Server.MapPath("~/petsimages/" + filename));
+                filepath = "~/petsimages/" + filename;
+                //FileUpload1.SaveAs(Server.MapPath("~/petsimages/") + Path.GetFileName("FileUpload1.Filename"));
+                //String link = "petsimages/" + Path.GetFileName(FileUpload1.FileName);
+                product Product = new product()
+                {
+                    procode = productid.Text,
+                    productname = txtname.Text,
+                    protype = txttype.Text,
+                    stock = int.Parse(txtstock.Text),
+                    price = int.Parse(txtprice.Text),
+                    link = filepath
+                };
+
+                productservice.Addproduct(Product);
+                GridView1.DataBind();
+                productid.Text = String.Empty;
                 lbmsg.Text = "Record Added";
             }
             catch (Exception ex)
@@ -55,17 +87,41 @@ namespace petshop.UI
 
         protected void btnupdate(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btndelete(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            try
+            {
+                string filepath = "~/petsimages/";
+                string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                if (filename == "" || filename == null)
+                {
+                    filepath = global_filepath;
+                }
+                else
+                {
+                    FileUpload1.SaveAs(Server.MapPath("petsimages/" + filename));
+                    filepath = "~/petsimages/" + filename;
+                }
+                product Product = new product()
+                {
+                    //productservices productservices = new productservices();
+                    procode = productid.Text,
+                    productname = txtname.Text,
+                    protype = txttype.Text,
+                    stock = int.Parse(txtstock.Text),
+                    price = int.Parse(txtprice.Text),
+                    link = global_filepath,
+                };
+                //productservices.Updateproduct(Product);
+                lbmsg.Text = "Record updated";
+                productservice.Updateproduct(Product);
+                
+                
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
+
+  

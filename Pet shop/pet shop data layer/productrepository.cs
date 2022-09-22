@@ -34,13 +34,14 @@ namespace pet_shop_data_layer
                 connection.Close();
             }
         }
-        public void Deleteproduct(string procode)
+        public DataTable Deleteproduct(string procode)
         {
             try
             {
-               comman = new SqlCommand($"delete from product where Procode ={procode}", connection);
-                connection.Open();
-                comman.ExecuteNonQuery();
+                command = new SqlDataAdapter($"Delete from product where Procode ={procode}", connection);
+                DataTable dt = new DataTable();
+                command.Fill(dt);
+                return dt;
 
             }
             catch (Exception)
@@ -48,18 +49,16 @@ namespace pet_shop_data_layer
 
                 throw;
             }
-            finally
-            {
-                connection.Close();
-            }
+   
         }
-        public void Updateproduct(string productname,string protype,int price,int stock,string link,string procode)
+        public DataTable Updateproduct(product Product)
         {
             try
             {
-               command = new SqlDataAdapter($"update product set productname ='"+productname+"',Protype='"+protype+"',Stock='"+stock.ToString()+"',Price ='"+price.ToString()+ "',link ='"+link+"' where procode =" + procode,connection);
+               command = new SqlDataAdapter($"update product set productname='{Product.productname}',protype='{Product.protype}',stock='{Product.stock}',price='{Product.price}'",connection);
                 DataTable dt = new DataTable();
                 command.Fill(dt);
+                return dt;
             }
             catch (Exception)
             {

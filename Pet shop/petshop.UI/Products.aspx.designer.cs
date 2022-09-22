@@ -87,22 +87,13 @@ namespace petshop.UI
         protected global::System.Web.UI.WebControls.Button buttonadd;
 
         /// <summary>
-        /// btnupdate control.
+        /// buttonupdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonnupdate;
-
-        /// <summary>
-        /// btndelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttondelete;
+        protected global::System.Web.UI.WebControls.Button buttonupdate;
 
         /// <summary>
         /// lbmsg control.
@@ -114,13 +105,13 @@ namespace petshop.UI
         protected global::System.Web.UI.WebControls.Label lbmsg;
 
         /// <summary>
-        /// GridView2 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
         /// ObjectDataSource2 control.

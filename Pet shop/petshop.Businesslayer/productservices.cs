@@ -40,11 +40,11 @@ namespace petshop.Businesslayer
                 throw;
             }
         }
-        public void Updateproduct(string productname,string protype,int stock,int price,string link,string procode)
+        public DataTable Updateproduct(product Product)
         {
             try
             {
-                repository.Updateproduct(productname,protype,stock,price,link,procode);
+                return repository.Updateproduct(Product);
             }
             catch (Exception)
             {

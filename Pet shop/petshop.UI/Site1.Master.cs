@@ -27,7 +27,7 @@ namespace petshop.UI
                     LinkButton2.Visible = true;
                     LinkButton3.Visible = true;
                     LinkButton1.Visible = true;
-                    LinkButton1.Text = "Hello " + Session["username"].ToString();
+                    LinkButton1.Text = "Hello!!!"+Session["username"].ToString();
                     btnadmin.Visible = false;
                 }
 
@@ -59,7 +59,7 @@ namespace petshop.UI
 
         protected void btnlogout(object sender, EventArgs e)
         {
-            Response.Redirect("Homepage.aspx");
+            Response.Redirect("HomePage.aspx");
         }
 
         protected void btlogin(object sender, EventArgs e)
