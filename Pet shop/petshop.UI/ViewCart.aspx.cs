@@ -12,6 +12,7 @@ using petshop.Businesslayer;
 using System.Web.UI.WebControls.WebParts;
 using System.Windows.Controls;
 using pet_shop_data_layer;
+using System.Diagnostics;
 
 namespace petshop.UI
 {
@@ -23,19 +24,21 @@ namespace petshop.UI
             
             DataTable dt = new DataTable();
             productservices productservices = new productservices();
-      
-            protected void Page_Load(object sender, EventArgs e)
+
+        
+        protected void Page_Load(object sender, EventArgs e)
             {
 
-                    GridView1.DataBind();
+
+            GridView1.DataBind();
                 
             if (GridView1.Rows.Count != 0)
                 {
                     GridView1.FooterRow.Cells[0].Text = "Total Amount";
                     GridView1.FooterRow.Cells[1].Text = TotalAmount().ToString();
-                    Placeordeer.Visible = true;
+                    placeorder.Visible = true;
                 }
-            }
+        }
 
             protected void delete_Click(object sender, EventArgs e)
             {
@@ -47,7 +50,7 @@ namespace petshop.UI
                     cartitem.pcode = ar;
                     dt = cartitemservices.deletecartitem(cartitem);
                     GridView1.DataBind();
-                }
+            }
                 catch (Exception)
                 {
 
@@ -55,29 +58,13 @@ namespace petshop.UI
                 }
             }
 
-            protected void Placeordeer_Click(object sender, EventArgs e)
+        protected void Placeorder_Click(object sender, EventArgs e)
+        {
+            if (GridView1.Rows.Count > 0)
             {
-                try
-                {
-                    if (GridView1.Rows.Count > 0)
-                    {
-                        Response.Write("<script>alert('Order Placed successful');</script>");
-                    }
-                    CartItem cartitem = new CartItem();
-                    CartItemservices cartitemservices = new CartItemservices();
-                    DataTable dt = new DataTable();
-                    //dt = cartitemservices.Deletecartitem();
-                    GridView1.DataSource = dt;
-                    GridView1.DataSourceID = null;
-                    GridView1.DataBind();
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                Response.Redirect("Placeorder.aspx");
             }
+        }
             public float TotalAmount()
             {
                 float tprice = 0;

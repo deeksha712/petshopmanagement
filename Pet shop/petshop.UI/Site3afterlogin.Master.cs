@@ -68,5 +68,9 @@ namespace petshop.UI
         {
             Response.Redirect("ViewCart.aspx");
         }
+        protected void btnmyorders(object sender,EventArgs e)
+        {
+            Response.Redirect("Ordersdata.aspx");
+        }
     }
 }

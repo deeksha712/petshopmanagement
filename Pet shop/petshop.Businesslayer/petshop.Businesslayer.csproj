@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Billservices.cs" />
+    <Compile Include="OrderDetailsservices.cs" />
     <Compile Include="CartItemservices.cs" />
     <Compile Include="productservices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

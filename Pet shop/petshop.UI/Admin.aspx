@@ -8,7 +8,7 @@
                            
                             <a href="Products.aspx" class="link-primary">Productsdetails</a>&nbsp;
                             <a href="customer.aspx" class="link-primary">Userdetails</a>
-                            <a href="#" class="link-primary">Orders</a>
+                            <a href="AllOrders.aspx" class="link-primary">AllOrders</a>
                             </p>
 
                     </div>

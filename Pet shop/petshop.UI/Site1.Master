@@ -51,16 +51,24 @@
                         </li>
                         
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="btnlogin" runat="server" OnClick="btlogin">User Login</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="btnlogin" runat="server" OnClick="btlogin">UserLogin</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="btnregister">Register</asp:LinkButton>
                          </li>
+                        
+                          <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" Visible="False" OnClick="btnviewcart">ViewCart</asp:LinkButton>
+                        </li>
+                        
                             <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClick="btnlogout">Logout</asp:LinkButton>
                         </li>
                                 <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Visible="False" OnClick="btnlogout">Hello User</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Visible="False">Hello User</asp:LinkButton>
+                        </li>
+                           <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton6" runat="server" Visible="False" OnClick="btnord">Myorders</asp:LinkButton>
                         </li>
 
                     </ul>

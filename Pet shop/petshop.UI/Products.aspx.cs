@@ -113,6 +113,7 @@ namespace petshop.UI
                 //productservices.Updateproduct(Product);
                 lbmsg.Text = "Record updated";
                 productservice.Updateproduct(Product);
+                GridView1.DataBind();
                 
                 
             }

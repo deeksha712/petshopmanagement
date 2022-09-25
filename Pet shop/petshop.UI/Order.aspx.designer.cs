@@ -11,17 +11,17 @@ namespace petshop.UI
 {
 
 
-    public partial class ViewCart
+    public partial class Order
     {
 
         /// <summary>
-        /// GridView1 control.
+        /// ordgrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView ordgrid;
 
         /// <summary>
         /// SqlDataSource1 control.
@@ -31,14 +31,5 @@ namespace petshop.UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
-        /// <summary>
-        /// placeorder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton placeorder;
     }
 }

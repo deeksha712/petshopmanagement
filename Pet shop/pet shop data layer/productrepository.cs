@@ -55,7 +55,7 @@ namespace pet_shop_data_layer
         {
             try
             {
-               command = new SqlDataAdapter($"update product set productname='{Product.productname}',protype='{Product.protype}',stock='{Product.stock}',price='{Product.price}'",connection);
+               command = new SqlDataAdapter($"update product set productname='{Product.productname}',protype='{Product.protype}',stock='{Product.stock}',price='{Product.price}' WHERE procode='{Product.procode}'",connection);
                 DataTable dt = new DataTable();
                 command.Fill(dt);
                 return dt;

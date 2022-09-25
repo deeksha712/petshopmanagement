@@ -83,7 +83,7 @@
                             <br />
                             <div class="row">
                                 <div class="col">
-                                    <asp:LinkButton CssClass="btn btn-info position-absolute bottom-0 end-0" ID="Placeordeer" runat="server" Font-Names="Cambria" ForeColor="White" OnClick="Placeordeer_Click" Visible="False">Place Order</asp:LinkButton>
+                                    <asp:LinkButton CssClass="btn btn-info position-absolute bottom-0 end-0" ID="placeorder" runat="server" Font-Names="Cambria" ForeColor="White" Text="Place Order" OnClick="Placeorder_Click" Visible="False">Place Order</asp:LinkButton>
                                 </div>
                             </div>
                         </div>

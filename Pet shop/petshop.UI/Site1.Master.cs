@@ -20,6 +20,9 @@ namespace petshop.UI
                     LinkButton3.Visible = false;
                     LinkButton1.Visible = false;
                     btnadmin.Visible = true;
+                    LinkButton4.Visible = false;
+                    
+                    LinkButton6.Visible = false;
                 }
                 else if (Session["role"].Equals("user"))
                 {
@@ -28,13 +31,29 @@ namespace petshop.UI
                     LinkButton3.Visible = true;
                     LinkButton1.Visible = true;
                     LinkButton1.Text = "Hello!!!"+Session["username"].ToString();
-                    btnadmin.Visible = false;
+                    btnadmin.Visible = true;
+                    LinkButton4.Visible = true;
+                   
+                    LinkButton6.Visible = true;
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+                    btnlogin.Visible = false;
+                    LinkButton2.Visible = true;
+                    LinkButton3.Visible = true;
+                    LinkButton1.Visible = true;
+                    LinkButton1.Text = "Hello Admin!!!";
+                    btnadmin.Visible = true;
+                    LinkButton4.Visible = false;
+
+                    LinkButton6.Visible = false;
                 }
 
+
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                
+                throw;
             }
 
 
@@ -42,7 +61,7 @@ namespace petshop.UI
 
         protected void btnadmin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminPage.aspx");
+            Response.Redirect("AdminLogin.aspx");
         }
 
         protected void btnviewproducts(object sender, EventArgs e)
@@ -65,6 +84,15 @@ namespace petshop.UI
         protected void btlogin(object sender, EventArgs e)
         {
             Response.Redirect("Loginform.aspx");
+        }
+        protected void btnviewcart(object sender,EventArgs e)
+        {
+            Response.Redirect("ViewCart.aspx");
+        }
+       
+        protected void btnord(object sender, EventArgs e)
+        {
+            Response.Redirect("Order.aspx");
         }
     }
 }
