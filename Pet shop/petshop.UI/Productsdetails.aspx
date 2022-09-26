@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="petshop.UI.Add_Product" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Productsdetails.aspx.cs" Inherits="petshop.UI.Add_Product" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
   
      <script type="text/javascript">
@@ -144,7 +144,7 @@
                                      <table align="center" class="w-100">
                                          <tr>
                                              <td>
-                                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="procode" DataSourceID="ObjectDataSource2">
+                                                 <asp:GridView ID="productsGrid" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="procode" DataSourceID="ObjectDataSource2">
                                                      <Columns>
                                                          <asp:CommandField ShowDeleteButton="True" />
                                                          <asp:BoundField DataField="procode" HeaderText="Productcode" SortExpression="procode" />

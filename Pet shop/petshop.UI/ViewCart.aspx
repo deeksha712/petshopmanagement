@@ -30,7 +30,7 @@
                              <div class="row">
                                 <div class="col">
    
-                                       <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="pcode" DataSourceID="SqlDataSource1" ShowFooter="true">
+                                       <asp:GridView class="table table-striped table-bordered" ID="cartGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="pcode" DataSourceID="SqlDataSource1" ShowFooter="true">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>

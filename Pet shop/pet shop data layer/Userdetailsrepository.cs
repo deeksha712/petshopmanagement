@@ -54,7 +54,7 @@ namespace pet_shop_data_layer
         {
             try
             {
-                command = new SqlCommand($"Update Userdetails set username='{user.username}',password ='{user.upassword}' where Phone ='{user.phone}'", connection);
+                command = new SqlCommand($"Update Userdetails set phone={user.phone} address={user.addres} city={user.city} where name ='{user.name}'", connection);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

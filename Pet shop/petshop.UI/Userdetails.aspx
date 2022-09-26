@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="customer.aspx.cs" Inherits="petshop.UI.User" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Userdetails.aspx.cs" Inherits="petshop.UI.User" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -49,7 +49,7 @@
                   <div class="row">
                      <div class="col" id="Address" title="Address">
                          <div class="text-center">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" 
+                        <asp:GridView class="table table-striped table-bordered" ID="usersGrid" runat="server" 
                             CssClass="auto-style1" AllowPaging="True" AutoGenerateColumns="False" 
                             BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" 
                             BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1"

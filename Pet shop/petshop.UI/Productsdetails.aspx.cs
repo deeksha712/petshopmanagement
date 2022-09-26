@@ -20,7 +20,7 @@ namespace petshop.UI
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
+            productsGrid.DataBind();
         }
 
 
@@ -75,7 +75,7 @@ namespace petshop.UI
                 };
 
                 productservice.Addproduct(Product);
-                GridView1.DataBind();
+                productsGrid.DataBind();
                 productid.Text = String.Empty;
                 lbmsg.Text = "Record Added";
             }
@@ -113,7 +113,7 @@ namespace petshop.UI
                 //productservices.Updateproduct(Product);
                 lbmsg.Text = "Record updated";
                 productservice.Updateproduct(Product);
-                GridView1.DataBind();
+                productsGrid.DataBind();
                 
                 
             }

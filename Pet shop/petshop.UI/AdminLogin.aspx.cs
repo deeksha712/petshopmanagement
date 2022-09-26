@@ -20,7 +20,7 @@ namespace petshop.UI
         {
             if (Textuser.Text == "deeksha@gmail.com" & Textpwd.Text == "srihitha")
             {
-                Response.Redirect("Admin.aspx");
+                Response.Redirect("Adminmainpage.aspx");
                 Session["role"] = "admin";
             }
             else

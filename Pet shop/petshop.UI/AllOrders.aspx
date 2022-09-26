@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <div class="text-center">
-                <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
+                <asp:GridView ID="ordersGrid" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
                     <Columns>
                         <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
                         <asp:BoundField DataField="pcode" HeaderText="Productcode" SortExpression="pcode" />

@@ -21,7 +21,7 @@ namespace petshop.UI
                     LinkButton1.Visible = false;
                     btnadmin.Visible = true;
                     LinkButton4.Visible = false;
-                    
+                    LinkButton5.Visible = false;
                     LinkButton6.Visible = false;
                 }
                 else if (Session["role"].Equals("user"))
@@ -33,6 +33,7 @@ namespace petshop.UI
                     LinkButton1.Text = "Hello!!!"+Session["username"].ToString();
                     btnadmin.Visible = true;
                     LinkButton4.Visible = true;
+                    LinkButton5.Visible = true;
                    
                     LinkButton6.Visible = true;
                 }
@@ -45,7 +46,7 @@ namespace petshop.UI
                     LinkButton1.Text = "Hello Admin!!!";
                     btnadmin.Visible = true;
                     LinkButton4.Visible = false;
-
+                    LinkButton5.Visible = false;
                     LinkButton6.Visible = false;
                 }
 
@@ -93,6 +94,10 @@ namespace petshop.UI
         protected void btnord(object sender, EventArgs e)
         {
             Response.Redirect("Order.aspx");
+        }
+        protected void btnedit(object sender,EventArgs e)
+        {
+            Response.Redirect("Edituser.aspx");
         }
     }
 }

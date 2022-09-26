@@ -19,7 +19,7 @@
                             <div class="col">
                                 <center>
                                 <h5>&nbsp;</h5>
-                                    <h5>Your Order Placed</h5>
+                                    <h5>Your Order is Placed</h5>
                                 <h6>Thank you so much for your order</h6>
                                     </center>
                             </div>

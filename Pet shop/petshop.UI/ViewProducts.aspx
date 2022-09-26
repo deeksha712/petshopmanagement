@@ -21,7 +21,6 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="buttonviewcart" runat="server" Height="30px" OnClick="viewcart" Text="ViewCart" />
     <asp:Label ID="lb" runat="server"></asp:Label>
     <br />
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:virtusadb %>" SelectCommand="SELECT [procode], [productname], [protype], [stock], [price], [link] FROM [product] WHERE ([productname] LIKE '%' + @productname + '%') or ([protype] LIKE '%' + @protype + '%')">
@@ -59,7 +58,7 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="procode" DataSourceID="SqlDataSource3" AllowPaging="True" OnRowCommand="Gridview1_Command" AllowSorting="True">
+                                        <asp:GridView class="table table-striped table-bordered" ID="productsGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="procode" DataSourceID="SqlDataSource3" AllowPaging="True" OnRowCommand="productsGrid_Command" AllowSorting="True">
 
                                             <Columns>
                                                 <asp:BoundField DataField="procode" HeaderText="ID" ReadOnly="True" SortExpression="procode">

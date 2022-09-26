@@ -30,12 +30,12 @@ namespace petshop.UI
             {
 
 
-            GridView1.DataBind();
+            cartGrid.DataBind();
                 
-            if (GridView1.Rows.Count != 0)
+            if (cartGrid.Rows.Count != 0)
                 {
-                    GridView1.FooterRow.Cells[0].Text = "Total Amount";
-                    GridView1.FooterRow.Cells[1].Text = TotalAmount().ToString();
+                    cartGrid.FooterRow.Cells[0].Text = "Total Amount";
+                    cartGrid.FooterRow.Cells[1].Text = TotalAmount().ToString();
                     placeorder.Visible = true;
                 }
         }
@@ -49,7 +49,7 @@ namespace petshop.UI
                     CartItem cartitem = new CartItem();
                     cartitem.pcode = ar;
                     dt = cartitemservices.deletecartitem(cartitem);
-                    GridView1.DataBind();
+                    cartGrid.DataBind();
             }
                 catch (Exception)
                 {
@@ -60,7 +60,7 @@ namespace petshop.UI
 
         protected void Placeorder_Click(object sender, EventArgs e)
         {
-            if (GridView1.Rows.Count > 0)
+            if (cartGrid.Rows.Count > 0)
             {
                 Response.Redirect("Placeorder.aspx");
             }
@@ -68,7 +68,7 @@ namespace petshop.UI
             public float TotalAmount()
             {
                 float tprice = 0;
-                foreach (GridViewRow row in GridView1.Rows)
+                foreach (GridViewRow row in cartGrid.Rows)
                 {
                     tprice = tprice + float.Parse(row.Cells[1].Text);
                 }

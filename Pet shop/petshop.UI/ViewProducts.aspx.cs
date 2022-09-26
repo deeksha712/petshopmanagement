@@ -25,20 +25,13 @@ namespace petshop.UI
         CartItem cartitem = new CartItem();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
-            if (Session["username"] == null)
-            {
-                buttonviewcart.Visible = false;
-            }
-            else
-            {
-                buttonviewcart.Visible = true;
-            }
+
+            productsGrid.DataBind();
             
         }
 
-        protected void Gridview1_Command(object sender, GridViewCommandEventArgs e)
+        protected void productsGrid_Command(object sender, GridViewCommandEventArgs e)
         {
             try
             {
@@ -52,7 +45,7 @@ namespace petshop.UI
                     {
                         //GridView1.DataKeys.exists(key);
                         int rowIndex = Convert.ToInt32(e.CommandArgument);
-                        GridViewRow r = GridView1.Rows[rowIndex];
+                        GridViewRow r = productsGrid.Rows[rowIndex];
                         int quan = int.Parse((r.FindControl("quantity") as DropDownList).Text);
                         string ar = r.Cells[0].Text;
 
@@ -119,9 +112,9 @@ namespace petshop.UI
         {
             if (TextBox2.Text != "")
             {
-                GridView1.DataSourceID = null;
-                GridView1.DataSource = SqlDataSource2;
-                GridView1.DataBind();
+                productsGrid.DataSourceID = null;
+                productsGrid.DataSource = SqlDataSource2;
+                productsGrid.DataBind();
             }
         }
 

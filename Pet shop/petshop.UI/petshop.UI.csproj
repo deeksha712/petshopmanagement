@@ -106,14 +106,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="ABOUTUS.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="AllOrders.aspx" />
+    <Content Include="Edituser.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Order.aspx" />
     <Content Include="Ordercompleted.aspx" />
-    <Content Include="PaceOrder.aspx" />
     <Content Include="petsimages\addcart.jpg" />
     <Content Include="petsimages\pet-shop-logo.jpg" />
     <Content Include="petsimages\Petstore.jpg" />
@@ -137,8 +136,8 @@
     <Content Include="petsimages\Persian cat.jpg" />
     <Content Include="petsimages\pug.jpg" />
     <Content Include="petsimages\Ragdoll cat.jpg" />
-    <Content Include="Products.aspx" />
-    <Content Include="Admin.aspx" />
+    <Content Include="Productsdetails.aspx" />
+    <Content Include="Adminmainpage.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js1\js1\popper.min.js" />
     <Content Include="bootstrap\js\js2\bootstrap.min.js" />
@@ -163,8 +162,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="petsimages\Bulldogimage.jpg" />
-    <Content Include="customer.aspx" />
-    <Content Include="User.aspx" />
+    <Content Include="Userdetails.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Loginform.aspx" />
     <Content Include="Registerform.aspx" />
@@ -224,6 +222,13 @@
     <Compile Include="AllOrders.aspx.designer.cs">
       <DependentUpon>AllOrders.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Edituser.aspx.cs">
+      <DependentUpon>Edituser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Edituser.aspx.designer.cs">
+      <DependentUpon>Edituser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,13 +249,6 @@
     </Compile>
     <Compile Include="Ordercompleted.aspx.designer.cs">
       <DependentUpon>Ordercompleted.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PaceOrder.aspx.cs">
-      <DependentUpon>PaceOrder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaceOrder.aspx.designer.cs">
-      <DependentUpon>PaceOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Placeorder.aspx.cs">
       <DependentUpon>Placeorder.aspx</DependentUpon>
@@ -287,28 +285,21 @@
     <Compile Include="Site3afterlogin.Master.designer.cs">
       <DependentUpon>Site3afterlogin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Products.aspx.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="Productsdetails.aspx.cs">
+      <DependentUpon>Productsdetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products.aspx.designer.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="Productsdetails.aspx.designer.cs">
+      <DependentUpon>Productsdetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Adminmainpage.aspx.cs">
+      <DependentUpon>Adminmainpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Adminmainpage.aspx.designer.cs">
+      <DependentUpon>Adminmainpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -363,19 +354,12 @@
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
-    <Compile Include="customer.aspx.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
+    <Compile Include="Userdetails.aspx.cs">
+      <DependentUpon>Userdetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customer.aspx.designer.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="User.aspx.cs">
-      <DependentUpon>User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User.aspx.designer.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="Userdetails.aspx.designer.cs">
+      <DependentUpon>Userdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

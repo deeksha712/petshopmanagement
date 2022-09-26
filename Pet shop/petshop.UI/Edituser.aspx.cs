@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace petshop.UI
 {
-    public partial class PaceOrder : System.Web.UI.Page
+    public partial class Edituser : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
