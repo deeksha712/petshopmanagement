@@ -16,7 +16,7 @@ namespace petshop.UI
 {
     public partial class Placeorder : System.Web.UI.Page
     {
-        int id;
+        int id = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
             Orderid();
@@ -25,13 +25,13 @@ namespace petshop.UI
         {
             try
             {
-                CartItem cartitem =new CartItem();
+                CartItem cartitem = new CartItem();
                 CartItemservices cartItemservices = new CartItemservices();
-                DataTable dt1=new DataTable();
+                DataTable dt1 = new DataTable();
                 dt1 = cartItemservices.getallitems();
                 int r = dt1.Rows.Count;
                 int i = 0;
-                while(i<r)
+                while (i < r)
                 {
                     OrderDetailsservices orderDetailsservices = new OrderDetailsservices();
                     OrderDetails orderdetails = new OrderDetails()
@@ -42,17 +42,17 @@ namespace petshop.UI
                         TotalPrice = int.Parse(dt1.Rows[i][6].ToString()),
                         orderdate = DateTime.Now.ToString(),
                         username = Session["username"].ToString(),
-                        Orderid = id,
+                        Orderid = id++,
                         Address = addresstxt.Text
                     };
                     orderDetailsservices.Addorderdetails(orderdetails);
                     i = i + 1;
                 }
-                DataTable dt= new DataTable();
+                DataTable dt = new DataTable();
                 cartItemservices.Deletecartitem();
                 Response.Redirect("Ordercompleted.aspx");
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -61,21 +61,25 @@ namespace petshop.UI
         {
             OrderDetailsservices orderDetailsservices = new OrderDetailsservices();
             OrderDetails orderDetails = new OrderDetails();
-            DataTable dtt=new DataTable();
+            DataTable dtt = new DataTable();
             dtt = orderDetailsservices.Getmaxordersid();
             if (dtt.Rows.Count > 0)
             {
+
                 if (dtt.Rows[0][0].ToString() == "")
                 {
-                    id = 1;
+
+                    id=1;
+                    
                 }
                 else
                 {
                     int cid = Convert.ToInt32(dtt.Rows[0][0].ToString());
-                    id++;
+                    cid++;
                     id = cid;
                 }
             }
+            
         }
     }
 }

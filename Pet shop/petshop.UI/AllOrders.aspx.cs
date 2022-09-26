@@ -13,5 +13,10 @@ namespace petshop.UI
         {
 
         }
+
+        protected void ordersGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

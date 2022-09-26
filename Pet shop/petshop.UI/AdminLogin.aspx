@@ -18,19 +18,19 @@
     .auto-style6 {
         width: 757px;
     }
-        .auto-style7 {
-            text-align: center;
-            width: 1024px;
-        }
-        .auto-style8 {
-            text-align: center;
-            height: 24px;
-            width: 1024px;
-        }
-        .auto-style9 {
-            width: 1024px;
-        }
-    </style>
+    .auto-style7 {
+        text-align: center;
+        width: 1024px;
+    }
+    .auto-style8 {
+        text-align: center;
+        height: 24px;
+        width: 1024px;
+    }
+    .auto-style9 {
+        width: 1024px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table align="center" class="auto-style2" class="table table-bordered">

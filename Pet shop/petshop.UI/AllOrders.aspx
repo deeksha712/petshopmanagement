@@ -7,11 +7,12 @@
         <tr>
             <td>
                 <div class="text-center">
-                <asp:GridView ID="ordersGrid" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
+                <asp:GridView ID="ordersGrid" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="ordersGrid_SelectedIndexChanged">
                     <Columns>
+                        <asp:BoundField DataField="Orderid" HeaderText="Orderid" SortExpression="Orderid" />
                         <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
                         <asp:BoundField DataField="pcode" HeaderText="Productcode" SortExpression="pcode" />
-                        <asp:BoundField DataField="productname" HeaderText="Productname" SortExpression="productname" />
+                        <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
                         <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
                         <asp:BoundField DataField="Totalprice" HeaderText="Totalprice" SortExpression="Totalprice" />
                         <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
@@ -28,7 +29,7 @@
                     <SortedDescendingHeaderStyle BackColor="#93451F" />
                 </asp:GridView>
                 </div>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:virtusadb %>" SelectCommand="SELECT [username], [pcode], [productname], [quantity], [Totalprice], [Address], [orderdate] FROM [OrderDetails]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:virtusadb %>" SelectCommand="SELECT [username], [pcode], [productname], [quantity], [Totalprice], [Address], [orderdate], [Orderid] FROM [OrderDetails]"></asp:SqlDataSource>
                 <br />
             </td>
         </tr>
